@@ -1,0 +1,273 @@
+/* ============================================================
+   MT Green Field Cleaners — work.css (Η Δουλειά μας)
+   ============================================================ */
+
+:root {
+  --white:       #FFFFFF;
+  --off-white:   #F7F4F0;
+  --brown-dark:  #3B2A1A;
+  --brown-mid:   #6B4C32;
+  --brown-light: #C9A87C;
+  --green-dark:  #2D5A3D;
+  --green-mid:   #4A7C59;
+  --green-light: #7EAD8A;
+  --green-pale:  #E8F2EB;
+  --before-red:  #C0392B;
+  --before-pale: #FDECEA;
+  --text-body:   #4A3B2E;
+  --radius:      8px;
+  --shadow:      0 4px 24px rgba(59,42,26,.10);
+  --transition:  0.3s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; color: var(--text-body); background: var(--white); line-height: 1.7; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; border-radius: 12px; }
+
+.container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid rgba(59,42,26,.08); box-shadow: 0 2px 12px rgba(59,42,26,.06); }
+.header-inner { max-width: 1160px; margin: 0 auto; padding: 0 24px; height: 68px; display: flex; align-items: center; gap: 40px; }
+.logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.logo-icon { font-size: 1.5rem; }
+.logo-text { font-size: 1rem; font-weight: 300; color: var(--brown-dark); letter-spacing: 0.02em; white-space: nowrap; }
+.logo-text strong { font-weight: 600; color: var(--green-dark); }
+.main-nav { display: flex; gap: 8px; margin-left: auto; }
+.nav-link { font-size: 0.9rem; font-weight: 500; color: var(--brown-mid); padding: 8px 16px; border-radius: var(--radius); transition: background var(--transition), color var(--transition); }
+.nav-link:hover, .nav-link.active { background: var(--green-pale); color: var(--green-dark); }
+.header-cta { font-size: 0.875rem; font-weight: 500; background: var(--green-mid); color: var(--white); padding: 10px 20px; border-radius: var(--radius); transition: background var(--transition); white-space: nowrap; flex-shrink: 0; }
+.header-cta:hover { background: var(--green-dark); }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn { display: inline-block; font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.95rem; padding: 14px 28px; border-radius: var(--radius); transition: all var(--transition); cursor: pointer; }
+.btn-white { background: var(--white); color: var(--green-dark); }
+.btn-white:hover { background: var(--off-white); transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,.5); }
+.btn-ghost:hover { border-color: var(--white); background: rgba(255,255,255,.1); }
+
+/* ============================================================
+   PAGE HERO
+   ============================================================ */
+.page-hero { position: relative; padding: 100px 24px 80px; background: var(--brown-dark); text-align: center; overflow: hidden; }
+.page-hero-bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(59,42,26,.90) 0%, rgba(45,90,61,.75) 100%),
+    url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1400&q=80') center/cover no-repeat;
+  z-index: 0;
+}
+.page-hero-content { position: relative; z-index: 1; animation: fadeUp .7s ease both; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+
+.breadcrumb { font-size: 0.8rem; color: rgba(255,255,255,.55); margin-bottom: 20px; }
+.breadcrumb a { color: rgba(255,255,255,.55); transition: color var(--transition); }
+.breadcrumb a:hover { color: var(--green-light); }
+.page-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); color: var(--white); margin-bottom: 16px; }
+.page-sub { font-size: 1rem; font-weight: 300; color: rgba(255,255,255,.75); }
+
+/* ============================================================
+   SHARED
+   ============================================================ */
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.7rem, 3vw, 2.4rem); color: var(--brown-dark); margin-bottom: 16px; }
+.label { display: inline-block; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-mid); margin-bottom: 12px; }
+
+/* ============================================================
+   INTRO
+   ============================================================ */
+.intro { padding: 64px 0; background: var(--off-white); border-bottom: 1px solid rgba(59,42,26,.07); }
+.intro-inner { display: flex; align-items: center; gap: 64px; flex-wrap: wrap; }
+.intro-inner > div:first-child { flex: 1; min-width: 280px; }
+.intro-inner p { font-size: 0.97rem; color: var(--text-body); }
+.intro-note { flex-shrink: 0; background: var(--white); border: 1px solid rgba(59,42,26,.08); border-radius: 12px; padding: 24px 28px; display: flex; align-items: flex-start; gap: 16px; box-shadow: var(--shadow); max-width: 320px; }
+.intro-note-icon { font-size: 1.6rem; flex-shrink: 0; }
+.intro-note p { font-size: 0.88rem; color: var(--text-body); line-height: 1.6; }
+.intro-note p strong { color: var(--green-dark); }
+.intro-note a { color: var(--green-mid); font-weight: 500; }
+.intro-note a:hover { text-decoration: underline; }
+
+/* ============================================================
+   PROJECTS — BEFORE / AFTER
+   ============================================================ */
+.projects { padding: 80px 0 100px; background: var(--white); }
+
+.project-card {
+  margin-bottom: 72px;
+  padding-bottom: 72px;
+  border-bottom: 1px solid rgba(59,42,26,.08);
+}
+.project-card:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+.project-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.project-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green-mid);
+  background: var(--green-pale);
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.project-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--brown-dark);
+  margin-bottom: 10px;
+}
+
+.project-desc {
+  font-size: 0.93rem;
+  color: var(--brown-mid);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+.project-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+  background: var(--off-white);
+  border-radius: 10px;
+  padding: 20px 24px;
+  border: 1px solid rgba(59,42,26,.07);
+}
+
+.project-meta span {
+  font-size: 0.85rem;
+  color: var(--brown-mid);
+  font-weight: 500;
+}
+
+/* ---- Before / After Grid ---- */
+.before-after-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.photo-slot {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  padding: 0; /* σημαντικό */
+}
+
+/* When a real <img> is placed inside */
+.photo-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  display: block;
+}
+
+/* Placeholder (remove when adding real photos) */
+
+.photo-slot.before .photo-placeholder { border-color: #E0A898; background: #FDF4F2; }
+.photo-slot.after  .photo-placeholder { border-color: var(--green-light); background: var(--green-pale); }
+
+.photo-placeholder span { font-size: 3rem; opacity: 0.5; }
+.photo-placeholder p { font-size: 0.85rem; color: var(--brown-mid); font-weight: 500; }
+.photo-placeholder code { font-size: 0.72rem; color: var(--brown-light); background: rgba(0,0,0,.04); padding: 3px 8px; border-radius: 4px; }
+
+/* Label badge */
+.photo-label {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.before-label {
+  background: rgba(192,57,43,.85);
+  color: var(--white);
+}
+
+.after-label {
+  background: rgba(45,90,61,.88);
+  color: var(--white);
+}
+
+/* ============================================================
+   PHOTO GUIDE BOX
+   ============================================================ */
+.photo-guide { padding: 40px 0 60px; background: var(--off-white); }
+.guide-box {
+  background: var(--white);
+  border: 1px solid rgba(59,42,26,.08);
+  border-left: 4px solid var(--green-mid);
+  border-radius: 12px;
+  padding: 28px 32px;
+  box-shadow: var(--shadow);
+}
+.guide-box h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--brown-dark); margin-bottom: 12px; }
+.guide-box p { font-size: 0.88rem; color: var(--brown-mid); margin-bottom: 10px; }
+.guide-box p strong { color: var(--green-dark); }
+.guide-box pre { background: var(--off-white); border-radius: 6px; padding: 12px 16px; margin: 12px 0; overflow-x: auto; }
+.guide-box code { font-size: 0.82rem; color: var(--brown-dark); }
+
+/* ============================================================
+   CTA BANNER
+   ============================================================ */
+.cta-banner { background: linear-gradient(135deg, var(--green-dark) 0%, var(--brown-dark) 100%); padding: 80px 0; text-align: center; }
+.cta-banner h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.4rem); color: var(--white); margin-bottom: 12px; }
+.cta-banner p { font-size: 1rem; color: rgba(255,255,255,.75); margin-bottom: 36px; }
+.cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer { background: var(--brown-dark); color: rgba(255,255,255,.80); padding-top: 64px; }
+.footer-inner { max-width: 1160px; margin: 0 auto; padding: 0 24px 48px; display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 56px; }
+.footer-logo { margin-bottom: 12px; display: block; }
+.footer-brand p { font-size: 0.88rem; line-height: 1.65; color: rgba(255,255,255,.60); max-width: 260px; }
+.footer-nav h4, .footer-contact h4 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--white); margin-bottom: 16px; }
+.footer-nav { display: flex; flex-direction: column; gap: 10px; }
+.footer-nav a { font-size: 0.88rem; color: rgba(255,255,255,.65); transition: color var(--transition); }
+.footer-nav a:hover { color: var(--green-light); }
+.footer-contact p { font-size: 0.88rem; margin-bottom: 8px; color: rgba(255,255,255,.70); }
+.footer-contact a { color: rgba(255,255,255,.70); transition: color var(--transition); }
+.footer-contact a:hover { color: var(--green-light); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,.10); text-align: center; padding: 20px 24px; font-size: 0.8rem; color: rgba(255,255,255,.40); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .before-after-grid { grid-template-columns: 1fr; }
+  .project-header { flex-direction: column; }
+  .project-meta { flex-direction: row; flex-wrap: wrap; gap: 12px; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: 1/-1; }
+}
+@media (max-width: 640px) {
+  .main-nav { display: none; }
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  .intro-inner { flex-direction: column; }
+  .intro-note { max-width: 100%; }
+}

@@ -1,0 +1,112 @@
+/* ============================================================
+   MT Green Field Cleaners — contact.css
+   ============================================================ */
+
+@import url('index.css'); /* Εισαγωγή βασικών στυλ και variables */
+
+/* ---- Page Hero Customization ---- */
+.page-hero {
+  position: relative;
+  padding: 100px 0 80px;
+  background: var(--brown-dark);
+  text-align: center;
+  color: var(--white);
+  overflow: hidden;
+}
+
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(59,42,26,.9) 0%, rgba(45,90,61,.8) 100%),
+              url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&q=80') center/cover;
+  opacity: 0.6;
+}
+
+.page-hero-content { position: relative; z-index: 1; }
+.breadcrumb { font-size: 0.85rem; margin-bottom: 16px; opacity: 0.8; }
+.breadcrumb a:hover { color: var(--green-light); }
+.page-title { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 16px; }
+.page-sub { font-size: 1.1rem; max-width: 600px; margin: 0 auto; opacity: 0.9; }
+
+/* ---- Contact Section ---- */
+.contact-details { padding: 80px 0; background: var(--off-white); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Service Notice (Highlighting "On Site") */
+.service-notice {
+  background: var(--green-dark);
+  color: var(--white);
+  padding: 40px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  box-shadow: var(--shadow);
+}
+
+.notice-icon { font-size: 2.5rem; display: block; margin-bottom: 15px; }
+.service-notice h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; font-size: 1.5rem; }
+.service-notice p { font-size: 1rem; line-height: 1.6; opacity: 0.9; }
+.service-notice strong { color: var(--white); }
+
+/* Info Cards */
+.contact-card {
+  background: var(--white);
+  display: flex;
+  gap: 20px;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(59,42,26,.05);
+  transition: transform var(--transition);
+}
+
+.contact-card:hover { transform: translateX(10px); }
+.card-icon { font-size: 1.8rem; }
+.card-text h4 { font-family: 'Playfair Display', serif; color: var(--brown-dark); margin-bottom: 5px; }
+.card-text p { color: var(--brown-mid); font-weight: 500; }
+.card-text small { color: var(--green-mid); font-weight: 500; }
+
+/* Visual Side */
+.contact-visual {
+  text-align: center;
+  position: sticky;
+  top: 100px;
+}
+
+.contact-logo-big {
+  width: 250px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow);
+}
+
+.area-coverage {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 12px;
+  border-left: 5px solid var(--green-mid);
+}
+
+.area-coverage h3 { font-family: 'Playfair Display', serif; margin-bottom: 10px; }
+.badge {
+  display: inline-block;
+  margin-top: 15px;
+  background: var(--green-pale);
+  color: var(--green-dark);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-visual { position: static; }
+}
