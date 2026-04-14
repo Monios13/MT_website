@@ -17,6 +17,11 @@
         <span class="logo-icon"><img src="photos/logo.jpg" alt="Logo" style="border-radius: 12px; width:60px; height:auto;"/></span>
         <span class="logo-text">MT <strong>Green Field</strong> Cleaners</span>
       </a>
+      <button class="mobile-nav-toggle" aria-expanded="false" aria-label="Άνοιγμα μενού">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <nav class="main-nav">
         <a href="index.html" class="nav-link">Αρχική</a>
         <a href="about.html" class="nav-link">Σχετικά με εμάς</a>
@@ -117,5 +122,14 @@
     </div>
   </footer>
 
+  <script>
+    const navToggle = document.querySelector('.mobile-nav-toggle');
+    const header = document.querySelector('.site-header');
+    navToggle?.addEventListener('click', () => {
+      const opened = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!opened));
+      header.classList.toggle('nav-open', !opened);
+    });
+  </script>
 </body>
 </html>

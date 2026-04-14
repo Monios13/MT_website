@@ -18,12 +18,17 @@
         <span class="logo-icon"><img src="photos/logo.jpg" alt="Logo" style="border-radius: 12px; width:60px; height:auto;"/></span>
         <span class="logo-text">MT <strong>Green Field</strong> Cleaners</span>
       </a>
-        <nav class="main-nav">
-          <a href="index.html" class="nav-link">Αρχική</a>
-          <a href="about.html" class="nav-link">Σχετικά με εμάς</a>
-          <a href="work.html" class="nav-link">Η Δουλειά μας</a>
-          <a href="contact.html" class="nav-link">Επικοινωνία</a>
-        </nav>
+      <button class="mobile-nav-toggle" aria-expanded="false" aria-label="Άνοιγμα μενού">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Αρχική</a>
+        <a href="about.html" class="nav-link">Σχετικά με εμάς</a>
+        <a href="work.html" class="nav-link">Η Δουλειά μας</a>
+        <a href="contact.html" class="nav-link">Επικοινωνία</a>
+      </nav>
     </div>
   </header>
 
@@ -43,8 +48,8 @@
       <div class="story-text">
         <span class="label">Η ιστορία μας</span>
         <h2 class="section-title">Ξεκινήσαμε με έναν απλό στόχο</h2>
-        <p>Η <strong>MT Green Field Cleaners</strong> με σκοπό να παρέχει επαγγελματικές υπηρεσίες καθαρισμού οικοπέδων και αγροτεμαχίων στην Αττική, με υψηλό επίπεδο ποιότητας.</p>
-        <p>Η εταιρεία μας χαρακτηρίζεται από την ποιότητα των υπηρεσιών, την συνέπεια στην εκτέλεση των έργων και την ευελιξία στην προσαρμογή στις ανάγκες των πελατών αφου όλες οι διαδικασίς πραγματοποιουνται στον χώρο σας.</p>
+        <p>Η <strong>MT Green Field Cleaners</strong> με σκοπό να παρέχει επαγγελματικές υπηρεσίες καθαρισμού κήπων, οικοπέδων και αγροτεμαχίων στην Αττική, με υψηλό επίπεδο ποιότητας.</p>
+        <p>Η εταιρεία μας χαρακτηρίζεται από την ποιότητα των υπηρεσιών, την συνέπεια στην εκτέλεση των έργων και την ευελιξία στην προσαρμογή στις ανάγκες των πελατών αφου όλες οι διαδικασίες πραγματοποιουνται στον χώρο σας.</p>
         <p>Πιστεύουμε ότι κάθε οικόπεδο αξίζει προσοχή — είτε πρόκειται για ένα μικρό αστικό αγροτεμάχιο, είτε για μια μεγάλη έκταση στην εξοχή.</p>
       </div>
       <div class="story-visual">
@@ -134,5 +139,14 @@
     </div>
   </footer>
 
+  <script>
+    const navToggle = document.querySelector('.mobile-nav-toggle');
+    const header = document.querySelector('.site-header');
+    navToggle?.addEventListener('click', () => {
+      const opened = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!opened));
+      header.classList.toggle('nav-open', !opened);
+    });
+  </script>
 </body>
 </html>
